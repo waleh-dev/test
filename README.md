@@ -64,3 +64,4 @@ bun run test
 - For production, run the server behind auth / a VPN and consider adding an
   API key check on `/api/submit`.
 "# teach-appraisal" 
+"# test" 
