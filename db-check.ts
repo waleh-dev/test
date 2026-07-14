@@ -21,7 +21,7 @@ try {
   process.exit(1);
 }
 
-console.log('── Supabase connection diagnostic ─────────────────');
+console.log('── Postgres connection diagnostic ─────────────────');
 console.log('  user :', user || '(none)');
 console.log('  host :', host);
 console.log('  port :', port);
@@ -42,7 +42,7 @@ try {
 }
 
 // 2) Try a real connection + trivial query.
-console.log('\n[2] Connecting to Postgres (ssl required by Supabase) ...');
+console.log('\n[2] Connecting to Postgres (SSL required) ...');
 const sql = postgres(url, { ssl: { rejectUnauthorized: false }, max: 1, connect_timeout: 10 });
 try {
   const r = await sql`SELECT 1 AS ok`;
@@ -79,7 +79,7 @@ try {
   console.error('    ❌ Connection/query failed:', e.message);
   if (String(e.message).includes('password')) console.error('       -> Password likely wrong or @ not encoded as %40.');
   if (String(e.message).includes('SSL') || String(e.message).includes('ssl'))
-    console.error('       -> SSL issue; Supabase requires ssl (handled in server.ts).');
+    console.error('       -> SSL issue; Postgres requires ssl (handled in server.ts).');
   if (String(e.message).includes('does not exist') || String(e.message).includes('permission'))
     console.error('       -> Database/role issue; check the DB name and that "postgres" role exists.');
 } finally {

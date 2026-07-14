@@ -1,4 +1,4 @@
-# Supabase direct connection (contains DB password — never commit)
+# Postgres direct connection (contains DB password — never commit)
 .env
 
 # dependencies (bun install)

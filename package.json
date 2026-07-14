@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "type": "module",
   "private": true,
-  "description": "Teacher performance appraisal system — static HTML form served by a Bun server, backed by Supabase Postgres.",
+  "description": "Teacher performance appraisal system — static HTML form served by a Bun server, backed by Render PostgreSQL.",
   "scripts": {
     "dev": "bun run --hot server.ts",
     "start": "bun run server.ts",

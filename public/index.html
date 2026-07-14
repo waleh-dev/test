@@ -512,10 +512,9 @@
   <!-- Backend note -->
   <div class="instructions" style="background:#e8f0fa; border-left-color:#0d3b66;">
     <strong>💾 Backend:</strong>
-    Submissions are saved to <b>Supabase Postgres</b> via the local Bun server
+    Submissions are saved to <b>Postgres (Render)</b> via the local Bun server
     (<code>/api/submit</code>). Run <code>bun run dev</code> and open
     <code>http://localhost:3000</code>. No configuration needed in the form.
-    <div id="submitStatus" style="margin-top:8px; font-size:13px; font-weight:600;"></div>
   </div>
 
   <div class="instructions">
@@ -531,12 +530,6 @@
     <div><span class="num">3</span> Satisfactory</div>
     <div><span class="num">2</span> Developing</div>
     <div><span class="num">1</span> Unsatisfactory</div>
-  </div>
-
-  <div class="actions">
-    <button class="btn secondary" onclick="window.print()">🖨 Print Form</button>
-    <button class="btn" onclick="calculateAll()">🔄 Recalculate Scores</button>
-    <button class="btn" id="submitBtn" onclick="submitToBackend()">📤 Submit to Supabase</button>
   </div>
 
   <!-- ============================================================= -->
@@ -1111,6 +1104,13 @@
     </div>
   </div>
 
+  <div class="actions" style="margin-top:24px;">
+    <button class="btn secondary" onclick="window.print()">🖨 Print Form</button>
+    <button class="btn" onclick="calculateAll()">🔄 Recalculate Scores</button>
+    <button class="btn" id="submitBtn" onclick="submitToBackend()">📤 Save to Database</button>
+    <div id="submitStatus" style="margin-top:8px; font-size:13px; font-weight:600;"></div>
+  </div>
+
 </div>
 
 <script>
@@ -1369,8 +1369,8 @@
   });
 
   /* ============================================================
-     SUBMIT TO GOOGLE SHEET (via Google Apps Script Web App)
-     ============================================================ */
+      SUBMIT TO POSTGRES (via local Bun server -> /api/submit)
+      ============================================================ */
 
   function gatherFormData() {
     const data = {
@@ -1441,7 +1441,7 @@
   }
 
   async function submitToBackend() {
-    const url = '/api/submit';   // same-origin Bun server -> Supabase
+    const url = '/api/submit';   // same-origin: local Bun server or Vercel function
 
     // Validate required fields
     const teacherName = document.getElementById('teacherName').value.trim();
@@ -1468,7 +1468,7 @@
     const btn  = document.getElementById('submitBtn');
     btn.disabled = true;
     btn.textContent = '⏳ Submitting...';
-    showStatus('⏳ Saving to Supabase…', 'pending');
+    showStatus('⏳ Saving…', 'pending');
 
     try {
       const response = await fetch(url, {
@@ -1483,10 +1483,10 @@
         throw new Error(result.message || 'Server returned an error');
       }
     } catch (err) {
-      showStatus('❌ Submission failed: ' + err.message + '. Is the Bun server running (bun run dev)?', 'error');
+      showStatus('❌ Submission failed: ' + err.message + '. Check your connection / server.', 'error');
     } finally {
       btn.disabled = false;
-      btn.textContent = '📤 Submit to Supabase';
+      btn.textContent = '📤 Save to Database';
     }
   }
 </script>

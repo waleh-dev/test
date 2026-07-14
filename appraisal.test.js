@@ -1,7 +1,7 @@
 import { Window } from 'happy-dom';
 import { readFileSync } from 'node:fs';
 
-const html = readFileSync('src/teacher-appraisal-form.html', 'utf8');
+const html = readFileSync('public/index.html', 'utf8');
 const bodyMatch = html.match(/<body>([\s\S]*)<\/body>/i);
 let bodyHtml = bodyMatch[1].replace(/<script[\s\S]*?<\/script>/gi, '');
 
