@@ -12,6 +12,6 @@
     "noEmit": true,
     "forceConsistentCasingInFileNames": true
   },
-  "include": ["server.ts", "src/**/*.js"],
+  "include": ["src/**/*.ts", "api/**/*.ts"],
   "exclude": ["node_modules"]
 }

@@ -1,6 +1,6 @@
 // End-to-end test: boots the real server, POSTs a submission, verifies it
 // landed in Render Postgres, then cleans up the test row.
-import './server.ts'; // side-effect: starts Bun.serve on :3000
+import './src/server.ts'; // side-effect: starts Bun.serve on :3000
 
 await new Promise((r) => setTimeout(r, 1500));
 

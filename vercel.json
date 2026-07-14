@@ -1,0 +1,8 @@
+{
+  "functions": {
+    "api/submit.ts": {
+      "maxDuration": 60,
+      "regions": ["sfo1"]
+    }
+  }
+}
