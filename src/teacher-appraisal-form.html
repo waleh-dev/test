@@ -1,0 +1,1494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Yeshua High School — Teacher Performance Appraisal Form</title>
+<style>
+  /* ============================================================
+     YESHUA HIGH SCHOOL THEME — White, Wine & Ash
+     Wine primary:   #722F37  (deep burgundy, from school logo)
+     Wine dark:      #4A1F26
+     Wine light bg:  #FAF0F1
+     Ash:            #6B6B6B  (medium gray)
+     Ash light bg:   #EDEDED
+     Ash dark text:  #3F3F3F
+     White:          #FFFFFF
+     ============================================================ */
+  :root {
+    --wine:        #722F37;
+    --wine-dark:   #4A1F26;
+    --wine-light:  #8E3D48;
+    --wine-tint:   #FAF0F1;
+    --ash:         #6B6B6B;
+    --ash-light:   #B5B5B5;
+    --ash-bg:      #EDEDED;
+    --ash-dark:    #3F3F3F;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+    background: #f5f5f5;
+    color: #2b2b2b;
+    padding: 20px;
+    line-height: 1.5;
+  }
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 36px 44px;
+    box-shadow: 0 6px 24px rgba(114,47,55,0.10);
+    border-radius: 6px;
+  }
+  .header {
+    text-align: center;
+    border-bottom: 4px double #722F37;
+    padding-bottom: 16px;
+    margin-bottom: 24px;
+  }
+  .header .crest {
+    width: 120px; height: auto;
+    margin: 0 auto 10px;
+    display: block;
+  }
+  .header h1 {
+    color: #722F37;
+    font-size: 28px;
+    margin: 6px 0 2px;
+    letter-spacing: 1.5px;
+    font-weight: 800;
+  }
+  .header h2 {
+    color: #4A1F26;
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    letter-spacing: 0.3px;
+  }
+  .header .tagline {
+    font-style: italic;
+    color: #6B6B6B;
+    font-size: 14px;
+    letter-spacing: 1px;
+  }
+  .core-values {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    margin: 14px 0 4px;
+    flex-wrap: wrap;
+  }
+  .core-value {
+    background: #722F37;
+    color: #ffffff;
+    padding: 6px 16px;
+    border-radius: 24px;
+    font-size: 12.5px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    border: 1.5px solid #722F37;
+  }
+  .core-value.alt {
+    background: #ffffff;
+    color: #722F37;
+  }
+  .meta {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px 22px;
+    background: #fafafa;
+    border: 1px solid #d9d9d9;
+    padding: 16px 20px;
+    border-radius: 6px;
+    margin-bottom: 22px;
+  }
+  .meta-row { display: flex; align-items: center; gap: 10px; }
+  .meta-row label {
+    font-weight: 600;
+    min-width: 140px;
+    color: #722F37;
+  }
+  .meta-row input, .meta-row select {
+    flex: 1;
+    border: none;
+    border-bottom: 1.5px solid #c0c0c0;
+    padding: 6px 4px;
+    font-size: 14px;
+    background: transparent;
+    font-family: inherit;
+  }
+  .meta-row input:focus, .meta-row select:focus {
+    outline: none;
+    border-bottom-color: #722F37;
+  }
+  .instructions {
+    background: #fafafa;
+    border-left: 4px solid #722F37;
+    padding: 12px 16px;
+    font-size: 13px;
+    margin-bottom: 22px;
+    border-radius: 4px;
+    color: #3F3F3F;
+  }
+  .instructions strong { color: #4A1F26; }
+  .section {
+    margin-bottom: 26px;
+    border: 1px solid #d9d9d9;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 20px;
+    color: #ffffff;
+  }
+  .section-a .section-header { background: #722F37; }             /* wine — Godliness */
+  .section-b .section-header { background: #4A1F26; }             /* wine-dark — Academic */
+  .section-c .section-header { background: #6B6B6B; }             /* ash — Entrepreneurship */
+  .section-header h3 {
+    font-size: 17px;
+    font-weight: 700;
+  }
+  .section-header .weight {
+    background: rgba(255,255,255,0.22);
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 12.5px;
+    font-weight: 700;
+  }
+  .value-tag {
+    background: rgba(255,255,255,0.15);
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    margin-left: 8px;
+  }
+  .criteria {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13.5px;
+  }
+  .criteria th, .criteria td {
+    padding: 10px 12px;
+    text-align: left;
+    border-bottom: 1px solid #e5e5e5;
+    vertical-align: middle;
+  }
+  .criteria thead th {
+    background: #EDEDED;
+    color: #4A1F26;
+    font-weight: 700;
+    font-size: 12.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+  }
+  .criteria tbody tr:hover { background: #fafafa; }
+  .criteria td.criterion { width: 50%; }
+  .criteria td.indicator { width: 35%; font-size: 12.5px; color: #3F3F3F; }
+  .rating-cell { width: 15%; text-align: center; }
+  .rating-options {
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+  }
+  .rating-options label {
+    cursor: pointer;
+    display: inline-block;
+  }
+  .rating-options input { display: none; }
+  .rating-options span {
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    line-height: 26px;
+    text-align: center;
+    border: 1.5px solid #c0c0c0;
+    border-radius: 50%;
+    font-weight: 600;
+    font-size: 12.5px;
+    background: #ffffff;
+    transition: all 0.15s;
+  }
+  .rating-options input:checked + span {
+    background: #722F37;
+    color: #ffffff;
+    border-color: #722F37;
+  }
+  .section-a .rating-options input:checked + span { background: #722F37; border-color: #722F37; }
+  .section-b .rating-options input:checked + span { background: #4A1F26; border-color: #4A1F26; }
+  .section-c .rating-options input:checked + span { background: #6B6B6B; border-color: #6B6B6B; }
+  .section-a .section-score { background: #FAF0F1; color: #722F37; }
+  .section-b .section-score { background: #EDEDED; color: #4A1F26; }
+  .section-c .section-score { background: #EDEDED; color: #6B6B6B; }
+  .section-score {
+    padding: 14px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 700;
+    font-size: 15px;
+  }
+  .section-score .score-box {
+    background: rgba(255,255,255,0.85);
+    padding: 6px 18px;
+    border-radius: 4px;
+    font-size: 18px;
+    border: 1.5px solid currentColor;
+  }
+  .results-inputs {
+    padding: 16px 20px;
+    background: #fafafa;
+    border-bottom: 1px solid #e5e5e5;
+  }
+  .results-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px 20px;
+  }
+  .results-grid .meta-row { background: #ffffff; padding: 4px 8px; border-radius: 4px; }
+  .results-grid .meta-row label { min-width: 200px; font-size: 13px; }
+  .results-grid .meta-row input { font-size: 13px; }
+
+  /* Summary / Matrix */
+  .summary-block {
+    margin-top: 30px;
+    border: 2px solid #722F37;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  .summary-header {
+    background: #722F37;
+    color: #ffffff;
+    padding: 14px 20px;
+    text-align: center;
+  }
+  .summary-header h2 { font-size: 18px; letter-spacing: 0.5px; }
+  .summary-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .summary-table th, .summary-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid #e5e5e5;
+    text-align: left;
+  }
+  .summary-table thead th {
+    background: #EDEDED;
+    color: #4A1F26;
+    font-weight: 700;
+    font-size: 13px;
+  }
+  .summary-table tfoot td {
+    font-weight: 700;
+    background: #FAF0F1;
+    font-size: 15px;
+    color: #4A1F26;
+  }
+  .total-score-box {
+    background: #722F37;
+    color: #ffffff;
+    padding: 10px 18px;
+    border-radius: 4px;
+    font-size: 18px;
+    font-weight: 700;
+    display: inline-block;
+  }
+
+  /* Promotion matrix */
+  .matrix-block {
+    margin-top: 26px;
+    border: 1px solid #d9d9d9;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  .matrix-header {
+    background: #4A1F26;
+    color: #ffffff;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+  .matrix-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13.5px;
+  }
+  .matrix-table th, .matrix-table td {
+    padding: 10px 14px;
+    border: 1px solid #e5e5e5;
+    text-align: left;
+  }
+  .matrix-table thead th { background: #EDEDED; color: #4A1F26; }
+  .matrix-table tbody tr:nth-child(1) { background: #FAF0F1; }   /* A  — wine tint */
+  .matrix-table tbody tr:nth-child(2) { background: #f5f0ed; }   /* B+ — wine light */
+  .matrix-table tbody tr:nth-child(3) { background: #ffffff; }   /* B  — white */
+  .matrix-table tbody tr:nth-child(4) { background: #EDEDED; }   /* C  — ash light */
+  .matrix-table tbody tr:nth-child(5) { background: #c9b5b8; }   /* D  — wine mid */
+
+  /* Decision Banner */
+  .decision-banner {
+    margin-top: 22px;
+    padding: 18px 24px;
+    border-radius: 6px;
+    background: #fafafa;
+    border-left: 8px solid #6B6B6B;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .decision-banner .label { font-weight: 700; color: #4A1F26; font-size: 15px; }
+  .decision-banner .decision { font-size: 20px; font-weight: 700; }
+  .decision-banner .score-display { font-size: 24px; font-weight: 800; }
+
+  /* Comments & signatures */
+  .comments-block {
+    margin-top: 26px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
+  .comment-card {
+    border: 1px solid #d9d9d9;
+    border-radius: 6px;
+    padding: 14px 16px;
+  }
+  .comment-card h4 {
+    color: #722F37;
+    margin-bottom: 8px;
+    font-size: 14px;
+  }
+  .comment-card textarea {
+    width: 100%;
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    padding: 8px;
+    font-family: inherit;
+    font-size: 13px;
+    min-height: 80px;
+    resize: vertical;
+  }
+  .signatures {
+    margin-top: 26px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 26px;
+  }
+  .sig-card {
+    border-top: 1.5px solid #6B6B6B;
+    padding-top: 8px;
+  }
+  .sig-card .role { font-weight: 700; color: #722F37; font-size: 13px; }
+  .sig-card .name-line {
+    border-bottom: 1px solid #B5B5B5;
+    height: 32px;
+    margin: 14px 0 4px;
+  }
+  .sig-card .date-line {
+    font-size: 12px;
+    color: #6B6B6B;
+  }
+
+  /* Rating legend */
+  .rating-legend {
+    display: flex;
+    justify-content: space-around;
+    margin: 12px 0 18px;
+    padding: 10px;
+    background: #fafafa;
+    border-radius: 4px;
+    font-size: 12.5px;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .rating-legend div { display: flex; align-items: center; gap: 6px; }
+  .rating-legend .num {
+    width: 22px; height: 22px;
+    border-radius: 50%;
+    background: #722F37;
+    color: #ffffff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 12px;
+  }
+
+  /* Print + action buttons */
+  .actions {
+    margin: 20px 0;
+    text-align: right;
+  }
+  .btn {
+    background: #722F37;
+    color: #ffffff;
+    border: none;
+    padding: 9px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    margin-left: 8px;
+    letter-spacing: 0.3px;
+  }
+  .btn:hover { background: #4A1F26; }
+  .btn.secondary { background: #6B6B6B; }
+  .btn.secondary:hover { background: #3F3F3F; }
+
+  @media print {
+    body { background: #ffffff; padding: 0; }
+    .container { box-shadow: none; max-width: 100%; padding: 20px; }
+    .actions { display: none; }
+    .section { page-break-inside: avoid; }
+    .summary-block, .matrix-block, .signatures { page-break-inside: avoid; }
+    .rating-options input:checked + span {
+      background: #722F37 !important;
+      color: #ffffff !important;
+      border-color: #722F37 !important;
+    }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- ===================== HEADER ===================== -->
+  <div class="header">
+    <img class="crest" src="logo.jpg" alt="Yeshua High School Crest">
+    <h1>YESHUA HIGH SCHOOL</h1>
+    <h2>Teacher Performance Appraisal Form</h2>
+    <div class="tagline">"JESUS — OUR PERFECT EXAMPLE"</div>
+    <div class="core-values">
+      <span class="core-value">GODLINESS</span>
+      <span class="core-value alt">ACADEMIC EXCELLENCE</span>
+      <span class="core-value">ENTREPRENEURSHIP</span>
+    </div>
+  </div>
+
+  <!-- ===================== META ===================== -->
+  <div class="meta">
+    <div class="meta-row">
+      <label>Teacher's Name:</label>
+      <input type="text" id="teacherName" placeholder="Surname, First Middle">
+    </div>
+    <div class="meta-row">
+      <label>Staff ID:</label>
+      <input type="text" id="staffId" placeholder="e.g. TCH/2024/014">
+    </div>
+    <div class="meta-row">
+      <label>Subject(s) Taught:</label>
+      <input type="text" id="subject" placeholder="e.g. Mathematics, Further Mathematics">
+    </div>
+    <div class="meta-row">
+      <label>Class(es) / Level:</label>
+      <input type="text" id="classes" placeholder="e.g. JSS2, SS1, SS3">
+    </div>
+    <div class="meta-row">
+      <label>Department:</label>
+      <input type="text" id="dept" placeholder="e.g. Sciences">
+    </div>
+    <div class="meta-row">
+      <label>Academic Session:</label>
+      <input type="text" id="session" placeholder="e.g. 2025/2026">
+    </div>
+    <div class="meta-row">
+      <label>Term:</label>
+      <select id="term">
+        <option value="">--Select--</option>
+        <option>First Term</option>
+        <option>Second Term</option>
+        <option>Third Term</option>
+        <option>Annual Review</option>
+      </select>
+    </div>
+    <div class="meta-row">
+      <label>Date of Appraisal:</label>
+      <input type="date" id="appraisalDate">
+    </div>
+  </div>
+
+  <!-- Backend note -->
+  <div class="instructions" style="background:#e8f0fa; border-left-color:#0d3b66;">
+    <strong>💾 Backend:</strong>
+    Submissions are saved to <b>Supabase Postgres</b> via the local Bun server
+    (<code>/api/submit</code>). Run <code>bun run dev</code> and open
+    <code>http://localhost:3000</code>. No configuration needed in the form.
+    <div id="submitStatus" style="margin-top:8px; font-size:13px; font-weight:600;"></div>
+  </div>
+
+  <div class="instructions">
+    <strong>Instructions:</strong> Rate each criterion on a scale of <strong>1 to 5</strong>.
+    5 = Exemplary (consistently exceeds expectations), 4 = Strong, 3 = Satisfactory (meets expectations),
+    2 = Developing (below expectations), 1 = Unsatisfactory. Click a number under each row to record your rating.
+    Scores auto-calculate. Print or save when complete.
+  </div>
+
+  <div class="rating-legend">
+    <div><span class="num">5</span> Exemplary</div>
+    <div><span class="num">4</span> Strong</div>
+    <div><span class="num">3</span> Satisfactory</div>
+    <div><span class="num">2</span> Developing</div>
+    <div><span class="num">1</span> Unsatisfactory</div>
+  </div>
+
+  <div class="actions">
+    <button class="btn secondary" onclick="window.print()">🖨 Print Form</button>
+    <button class="btn" onclick="calculateAll()">🔄 Recalculate Scores</button>
+    <button class="btn" id="submitBtn" onclick="submitToBackend()">📤 Submit to Supabase</button>
+  </div>
+
+  <!-- ============================================================= -->
+  <!-- SECTION A — BIBLICAL INTEGRATION (30%) — GODLINESS            -->
+  <!-- ============================================================= -->
+  <div class="section section-a">
+    <div class="section-header">
+      <h3>SECTION A: Biblical Integration <span class="value-tag">Core Value: GODLINESS</span></h3>
+      <span class="weight" id="weightLabelA">Weight: 30%</span>
+    </div>
+    <table class="criteria" id="sectionA">
+      <thead>
+        <tr>
+          <th class="criterion">Criterion</th>
+          <th class="indicator">Key Indicators</th>
+          <th class="rating-cell">Rating (1–5)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="criterion"><b>1. Prayer & Devotional Life</b></td>
+          <td class="indicator">Opens and closes every lesson with prayer; conducts or leads Christian devotionals faithfully.</td>
+          <td class="rating-cell">
+            <div class="rating-options">
+              <label><input type="radio" name="a1" value="1"><span>1</span></label>
+              <label><input type="radio" name="a1" value="2"><span>2</span></label>
+              <label><input type="radio" name="a1" value="3"><span>3</span></label>
+              <label><input type="radio" name="a1" value="4"><span>4</span></label>
+              <label><input type="radio" name="a1" value="5"><span>5</span></label>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="criterion"><b>2. Scripture Integration in Teaching</b></td>
+          <td class="indicator">Deliberately weaves Bible verses, Christian principles or moral lessons into subject content.</td>
+          <td class="rating-cell">
+            <div class="rating-options">
+              <label><input type="radio" name="a2" value="1"><span>1</span></label>
+              <label><input type="radio" name="a2" value="2"><span>2</span></label>
+              <label><input type="radio" name="a2" value="3"><span>3</span></label>
+              <label><input type="radio" name="a2" value="4"><span>4</span></label>
+              <label><input type="radio" name="a2" value="5"><span>5</span></label>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="criterion"><b>3. Christ-like Character & Conduct</b></td>
+          <td class="indicator">Demonstrates integrity, humility, patience and love in interactions with students, parents and colleagues.</td>
+          <td class="rating-cell">
+            <div class="rating-options">
+              <label><input type="radio" name="a3" value="1"><span>1</span></label>
+              <label><input type="radio" name="a3" value="2"><span>2</span></label>
+              <label><input type="radio" name="a3" value="3"><span>3</span></label>
+              <label><input type="radio" name="a3" value="4"><span>4</span></label>
+              <label><input type="radio" name="a3" value="5"><span>5</span></label>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="criterion"><b>4. Attendance at Spiritual Programmes</b></td>
+          <td class="indicator">Faithfully attends chapel services, staff Bible study, prayer meetings and Christian activities of the school.</td>
+          <td class="rating-cell">
+            <div class="rating-options">
+              <label><input type="radio" name="a4" value="1"><span>1</span></label>
+              <label><input type="radio" name="a4" value="2"><span>2</span></label>
+              <label><input type="radio" name="a4" value="3"><span>3</span></label>
+              <label><input type="radio" name="a4" value="4"><span>4</span></label>
+              <label><input type="radio" name="a4" value="5"><span>5</span></label>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="criterion"><b>5. Spiritual Mentorship & Counselling</b></td>
+          <td class="indicator">Counsels and disciples students spiritually; provides biblical guidance on moral and personal issues.</td>
+          <td class="rating-cell">
+            <div class="rating-options">
+              <label><input type="radio" name="a5" value="1"><span>1</span></label>
+              <label><input type="radio" name="a5" value="2"><span>2</span></label>
+              <label><input type="radio" name="a5" value="3"><span>3</span></label>
+              <label><input type="radio" name="a5" value="4"><span>4</span></label>
+              <label><input type="radio" name="a5" value="5"><span>5</span></label>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="criterion"><b>6. Modelling of Moral Values</b></td>
+          <td class="indicator">Consistently demonstrates honesty, purity, discipline and respect; serves as a godly role model.</td>
+          <td class="rating-cell">
+            <div class="rating-options">
+              <label><input type="radio" name="a6" value="1"><span>1</span></label>
+              <label><input type="radio" name="a6" value="2"><span>2</span></label>
+              <label><input type="radio" name="a6" value="3"><span>3</span></label>
+              <label><input type="radio" name="a6" value="4"><span>4</span></label>
+              <label><input type="radio" name="a6" value="5"><span>5</span></label>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="criterion"><b>7. Use of Christian Literature</b></td>
+          <td class="indicator">Uses Bible stories, Christian literature, hymns or godly illustrations to enrich learning.</td>
+          <td class="rating-cell">
+            <div class="rating-options">
+              <label><input type="radio" name="a7" value="1"><span>1</span></label>
+              <label><input type="radio" name="a7" value="2"><span>2</span></label>
+              <label><input type="radio" name="a7" value="3"><span>3</span></label>
+              <label><input type="radio" name="a7" value="4"><span>4</span></label>
+              <label><input type="radio" name="a7" value="5"><span>5</span></label>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="section-score">
+      <span>Section A Subtotal (out of 100):</span>
+      <span class="score-box" id="scoreA">— /100</span>
+    </div>
+  </div>
+
+  <!-- ============================================================= -->
+  <!-- SECTION B — SSCE / BECE RESULTS (40%) — ACADEMIC EXCELLENCE   -->
+  <!-- ============================================================= -->
+  <div class="section section-b">
+    <div class="section-header">
+      <h3>SECTION B: SSCE / BECE Results in Teacher's Subject <span class="value-tag">Core Value: ACADEMIC EXCELLENCE</span></h3>
+      <span class="weight" id="weightLabelB">Weight: 40%</span>
+    </div>
+
+    <div class="results-inputs">
+      <div style="font-weight:700; color:#0d3b66; margin-bottom:8px; font-size:13px;">
+        PART B1: Subject Examination Results Data (enter figures — used to inform ratings below)
+      </div>
+      <div class="results-grid">
+        <div class="meta-row">
+          <label>No. of Candidates (SSCE/BECE):</label>
+          <input type="number" id="candTotal" min="0" placeholder="0">
+        </div>
+        <div class="meta-row">
+          <label>No. with A's / Distinctions:</label>
+          <input type="number" id="candA" min="0" placeholder="0">
+        </div>
+        <div class="meta-row">
+          <label>No. with B's / Very Good:</label>
+          <input type="number" id="candB" min="0" placeholder="0">
+        </div>
+        <div class="meta-row">
+          <label>No. with C's / Credit:</label>
+          <input type="number" id="candC" min="0" placeholder="0">
+        </div>
+        <div class="meta-row">
+          <label>No. who Passed (A–C / A1–C6):</label>
+          <input type="number" id="candPass" min="0" placeholder="0">
+        </div>
+        <div class="meta-row">
+          <label>No. with F / Failures:</label>
+          <input type="number" id="candFail" min="0" placeholder="0">
+        </div>
+        <div class="meta-row">
+          <label>National/State Avg Pass %:</label>
+          <input type="number" id="natAvg" min="0" max="100" placeholder="%">
+        </div>
+        <div class="meta-row">
+          <label>Previous Year Pass % (Subject):</label>
+          <input type="number" id="prevYear" min="0" max="100" placeholder="%">
+        </div>
+      </div>
+      <div style="margin-top:10px; font-size:13px; color:#0d3b66; font-weight:600;">
+        Computed Subject Pass Rate: <span id="computedPass">— %</span>
+        &nbsp;|&nbsp; A/B/Distinction Rate: <span id="computedTop">— %</span>
+      </div>
+    </div>
+
+    <table class="criteria" id="sectionB">
+      <thead>
+        <tr>
+          <th class="criterion">Criterion</th>
+          <th class="indicator">Key Indicators</th>
+          <th class="rating-cell">Rating (1–5)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="criterion"><b>1. Subject Pass Rate (SSCE/BECE)</b></td>
+          <td class="indicator">Percentage of candidates with credit-level pass in the teacher's subject meets or exceeds national/state benchmarks.</td>
+          <td class="rating-cell">
+            <div class="rating-options">
+              <label><input type="radio" name="b1" value="1"><span>1</span></label>
+              <label><input type="radio" name="b1" value="2"><span>2</span></label>
+              <label><input type="radio" name="b1" value="3"><span>3</span></label>
+              <label><input type="radio" name="b1" value="4"><span>4</span></label>
+              <label><input type="radio" name="b1" value="5"><span>5</span></label>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="criterion"><b>2. Distinction / Excellence Rate</b></td>
+          <td class="indicator">Proportion of students scoring A's / B's / distinctions in the subject is commendable.</td>
+          <td class="rating-cell">
+            <div class="rating-options">
+              <label><input type="radio" name="b2" value="1"><span>1</span></label>
+              <label><input type="radio" name="b2" value="2"><span>2</span></label>
+              <label><input type="radio" name="b2" value="3"><span>3</span></label>
+              <label><input type="radio" name="b2" value="4"><span>4</span></label>
+              <label><input type="radio" name="b2" value="5"><span>5</span></label>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="criterion"><b>3. Year-on-Year Improvement</b></td>
+          <td class="indicator">Demonstrates consistent improvement in subject results compared to previous session(s).</td>
+          <td class="rating-cell">
+            <div class="rating-options">
+              <label><input type="radio" name="b3" value="1"><span>1</span></label>
+              <label><input type="radio" name="b3" value="2"><span>2</span></label>
+              <label><input type="radio" name="b3" value="3"><span>3</span></label>
+              <label><input type="radio" name="b3" value="4"><span>4</span></label>
+              <label><input type="radio" name="b3" value="5"><span>5</span></label>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="criterion"><b>4. Quality of Lesson Delivery</b></td>
+          <td class="indicator">Lesson plans are well-structured, current, syllabus-aligned and prepare students adequately for SSCE/BECE.</td>
+          <td class="rating-cell">
+            <div class="rating-options">
+              <label><input type="radio" name="b4" value="1"><span>1</span></label>
+              <label><input type="radio" name="b4" value="2"><span>2</span></label>
+              <label><input type="radio" name="b4" value="3"><span>3</span></label>
+              <label><input type="radio" name="b4" value="4"><span>4</span></label>
+              <label><input type="radio" name="b4" value="5"><span>5</span></label>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="criterion"><b>5. Use of Continuous Assessment</b></td>
+          <td class="indicator">Administers CA/tests, mocks, assignments consistently and uses data to identify weak students.</td>
+          <td class="rating-cell">
+            <div class="rating-options">
+              <label><input type="radio" name="b5" value="1"><span>1</span></label>
+              <label><input type="radio" name="b5" value="2"><span>2</span></label>
+              <label><input type="radio" name="b5" value="3"><span>3</span></label>
+              <label><input type="radio" name="b5" value="4"><span>4</span></label>
+              <label><input type="radio" name="b5" value="5"><span>5</span></label>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="criterion"><b>6. Remediation & Extra Coaching</b></td>
+          <td class="indicator">Conducts effective extra lessons, holiday coaching and remedial classes for slow learners.</td>
+          <td class="rating-cell">
+            <div class="rating-options">
+              <label><input type="radio" name="b6" value="1"><span>1</span></label>
+              <label><input type="radio" name="b6" value="2"><span>2</span></label>
+              <label><input type="radio" name="b6" value="3"><span>3</span></label>
+              <label><input type="radio" name="b6" value="4"><span>4</span></label>
+              <label><input type="radio" name="b6" value="5"><span>5</span></label>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="criterion"><b>7. Internal Examination Performance</b></td>
+          <td class="indicator">Class internal exam averages are high; terminal results align with (predict) external exam outcomes.</td>
+          <td class="rating-cell">
+            <div class="rating-options">
+              <label><input type="radio" name="b7" value="1"><span>1</span></label>
+              <label><input type="radio" name="b7" value="2"><span>2</span></label>
+              <label><input type="radio" name="b7" value="3"><span>3</span></label>
+              <label><input type="radio" name="b7" value="4"><span>4</span></label>
+              <label><input type="radio" name="b7" value="5"><span>5</span></label>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="criterion"><b>8. Professional Development</b></td>
+          <td class="indicator">Attends workshops, in-service training, subject association meetings to upgrade knowledge.</td>
+          <td class="rating-cell">
+            <div class="rating-options">
+              <label><input type="radio" name="b8" value="1"><span>1</span></label>
+              <label><input type="radio" name="b8" value="2"><span>2</span></label>
+              <label><input type="radio" name="b8" value="3"><span>3</span></label>
+              <label><input type="radio" name="b8" value="4"><span>4</span></label>
+              <label><input type="radio" name="b8" value="5"><span>5</span></label>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="section-score">
+      <span>Section B Subtotal (out of 100):</span>
+      <span class="score-box" id="scoreB">— /100</span>
+    </div>
+  </div>
+
+  <!-- ============================================================= -->
+  <!-- SECTION C — VOCATIONAL SKILL DEVELOPMENT (30%) — ENTREPRENEURSHIP -->
+  <!-- ============================================================= -->
+  <div class="section section-c">
+    <div class="section-header">
+      <h3>SECTION C: Commitment to Vocational Skill Development <span class="value-tag">Core Value: ENTREPRENEURSHIP</span></h3>
+      <span class="weight" id="weightLabelC">Weight: 30%</span>
+    </div>
+    <table class="criteria" id="sectionC">
+      <thead>
+        <tr>
+          <th class="criterion">Criterion</th>
+          <th class="indicator">Key Indicators</th>
+          <th class="rating-cell">Rating (1–5)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="criterion"><b>1. Identification of Students' Talents</b></td>
+          <td class="indicator">Proactively identifies vocational talents in students and creates opportunities for nurturing them.</td>
+          <td class="rating-cell">
+            <div class="rating-options">
+              <label><input type="radio" name="c1" value="1"><span>1</span></label>
+              <label><input type="radio" name="c1" value="2"><span>2</span></label>
+              <label><input type="radio" name="c1" value="3"><span>3</span></label>
+              <label><input type="radio" name="c1" value="4"><span>4</span></label>
+              <label><input type="radio" name="c1" value="5"><span>5</span></label>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="criterion"><b>2. Practical Skill Acquisition Programmes</b></td>
+          <td class="indicator">Organizes or facilitates hands-on training (tailoring, catering, ICT, agriculture, crafts, etc.) within or outside the classroom.</td>
+          <td class="rating-cell">
+            <div class="rating-options">
+              <label><input type="radio" name="c2" value="1"><span>1</span></label>
+              <label><input type="radio" name="c2" value="2"><span>2</span></label>
+              <label><input type="radio" name="c2" value="3"><span>3</span></label>
+              <label><input type="radio" name="c2" value="4"><span>4</span></label>
+              <label><input type="radio" name="c2" value="5"><span>5</span></label>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="criterion"><b>3. Mentorship in Entrepreneurship</b></td>
+          <td class="indicator">Mentors students in mini-business projects, idea generation, financial literacy and enterprise.</td>
+          <td class="rating-cell">
+            <div class="rating-options">
+              <label><input type="radio" name="c3" value="1"><span>1</span></label>
+              <label><input type="radio" name="c3" value="2"><span>2</span></label>
+              <label><input type="radio" name="c3" value="3"><span>3</span></label>
+              <label><input type="radio" name="c3" value="4"><span>4</span></label>
+              <label><input type="radio" name="c3" value="5"><span>5</span></label>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="criterion"><b>4. Integration of Skills into Subject Teaching</b></td>
+          <td class="indicator">Connects academic concepts to real-world vocations and entrepreneurial applications.</td>
+          <td class="rating-cell">
+            <div class="rating-options">
+              <label><input type="radio" name="c4" value="1"><span>1</span></label>
+              <label><input type="radio" name="c4" value="2"><span>2</span></label>
+              <label><input type="radio" name="c4" value="3"><span>3</span></label>
+              <label><input type="radio" name="c4" value="4"><span>4</span></label>
+              <label><input type="radio" name="c4" value="5"><span>5</span></label>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="criterion"><b>5. Skills Fair / Exhibition / Showcase Participation</b></td>
+          <td class="indicator">Actively prepares students for, and participates in, the school's skills fair, exhibition or entrepreneurship day.</td>
+          <td class="rating-cell">
+            <div class="rating-options">
+              <label><input type="radio" name="c5" value="1"><span>1</span></label>
+              <label><input type="radio" name="c5" value="2"><span>2</span></label>
+              <label><input type="radio" name="c5" value="3"><span>3</span></label>
+              <label><input type="radio" name="c5" value="4"><span>4</span></label>
+              <label><input type="radio" name="c5" value="5"><span>5</span></label>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="criterion"><b>6. Documentation & Tracking</b></td>
+          <td class="indicator">Keeps a register/logbook of students' skills, progress and outcomes; submits reports to the Entrepreneurship Coordinator.</td>
+          <td class="rating-cell">
+            <div class="rating-options">
+              <label><input type="radio" name="c6" value="1"><span>1</span></label>
+              <label><input type="radio" name="c6" value="2"><span>2</span></label>
+              <label><input type="radio" name="c6" value="3"><span>3</span></label>
+              <label><input type="radio" name="c6" value="4"><span>4</span></label>
+              <label><input type="radio" name="c6" value="5"><span>5</span></label>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="criterion"><b>7. Collaboration with Industry / Alumni</b></td>
+          <td class="indicator">Builds partnerships with local artisans, businesses or alumni to expose students to vocational opportunities.</td>
+          <td class="rating-cell">
+            <div class="rating-options">
+              <label><input type="radio" name="c7" value="1"><span>1</span></label>
+              <label><input type="radio" name="c7" value="2"><span>2</span></label>
+              <label><input type="radio" name="c7" value="3"><span>3</span></label>
+              <label><input type="radio" name="c7" value="4"><span>4</span></label>
+              <label><input type="radio" name="c7" value="5"><span>5</span></label>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="criterion"><b>8. Personal Vocational Growth</b></td>
+          <td class="indicator">Teacher is actively developing his/her own vocational/entrepreneurial competence beyond classroom teaching.</td>
+          <td class="rating-cell">
+            <div class="rating-options">
+              <label><input type="radio" name="c8" value="1"><span>1</span></label>
+              <label><input type="radio" name="c8" value="2"><span>2</span></label>
+              <label><input type="radio" name="c8" value="3"><span>3</span></label>
+              <label><input type="radio" name="c8" value="4"><span>4</span></label>
+              <label><input type="radio" name="c8" value="5"><span>5</span></label>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="section-score">
+      <span>Section C Subtotal (out of 100):</span>
+      <span class="score-box" id="scoreC">— /100</span>
+    </div>
+  </div>
+
+  <!-- ============================================================= -->
+  <!-- SUMMARY SCORE & MATRIX                                         -->
+  <!-- ============================================================= -->
+  <div class="summary-block">
+    <div class="summary-header">
+      <h2>FINAL APPRAISAL SCORE SHEET</h2>
+    </div>
+    <table class="summary-table">
+      <thead>
+        <tr>
+          <th style="width:50%;">Evaluation Section</th>
+          <th style="width:15%;">Raw Score (/100)</th>
+          <th style="width:15%;">Weight</th>
+          <th style="width:20%;">Weighted Score</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><b>Section A:</b> Biblical Integration (Godliness)</td>
+          <td id="rawA">—</td>
+          <td>× 30%</td>
+          <td id="weightA">—</td>
+        </tr>
+        <tr>
+          <td><b>Section B:</b> SSCE / BECE Results (Academic Excellence)</td>
+          <td id="rawB">—</td>
+          <td>× 40%</td>
+          <td id="weightB">—</td>
+        </tr>
+        <tr>
+          <td><b>Section C:</b> Vocational Skill Development (Entrepreneurship)</td>
+          <td id="rawC">—</td>
+          <td>× 30%</td>
+          <td id="weightC">—</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="3">TOTAL WEIGHTED APPRAISAL SCORE</td>
+          <td><span class="total-score-box" id="totalScore">— /100</span></td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+
+  <!-- Promotion Decision Matrix -->
+  <div class="matrix-block">
+    <div class="matrix-header">📊 GRADABLE PROMOTION & PERFORMANCE MATRIX</div>
+    <table class="matrix-table">
+      <thead>
+        <tr>
+          <th style="width:10%;">Grade</th>
+          <th style="width:15%;">Score Range</th>
+          <th style="width:20%;">Performance Level</th>
+          <th style="width:30%;">Promotion / HR Decision</th>
+          <th style="width:25%;">Required Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><b>A</b></td>
+          <td>85 – 100</td>
+          <td><b>Outstanding</b></td>
+          <td>Highly recommended for <b>promotion, increment & accelerated advancement</b>.</td>
+          <td>Reward publicly; nominate for "Teacher of the Year".</td>
+        </tr>
+        <tr>
+          <td><b>B+</b></td>
+          <td>75 – 84</td>
+          <td><b>Excellent</b></td>
+          <td><b>Recommended for promotion</b> to next grade/level.</td>
+          <td>Acknowledge; assign leadership role in subject area.</td>
+        </tr>
+        <tr>
+          <td><b>B</b></td>
+          <td>65 – 74</td>
+          <td><b>Very Good</b></td>
+          <td><b>Eligible for promotion</b> (subject to admin's recommendation).</td>
+          <td>Continue; mentor a junior colleague.</td>
+        </tr>
+        <tr>
+          <td><b>C</b></td>
+          <td>55 – 64</td>
+          <td><b>Good</b></td>
+          <td><b>Retained</b>; placed on a 1-term Performance Improvement Plan (PIP).</td>
+          <td>Supervisor to set 3 specific targets; review next term.</td>
+        </tr>
+        <tr>
+          <td><b>D</b></td>
+          <td>45 – 54</td>
+          <td><b>Fair</b></td>
+          <td><b>Retained</b> with mandatory 6-month improvement plan; <b>not eligible</b> for promotion or increment.</td>
+          <td>Close supervision; possible reassignment of classes.</td>
+        </tr>
+        <tr>
+          <td><b>F</b></td>
+          <td>Below 45</td>
+          <td><b>Unsatisfactory</b></td>
+          <td><b>Not promoted.</b> Disciplinary review; contract non-renewal or termination considered.</td>
+          <td>Formal warning; final probation before action.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Decision Banner -->
+  <div class="decision-banner" id="decisionBanner">
+    <div>
+      <div class="label">FINAL GRADE & DECISION</div>
+      <div class="decision" id="finalDecision">Awaiting Ratings…</div>
+    </div>
+    <div class="score-display" id="finalScoreDisplay">— %</div>
+  </div>
+
+  <!-- Comments -->
+  <div class="comments-block">
+    <div class="comment-card">
+      <h4>Strengths Observed</h4>
+      <textarea id="strengths" placeholder="Appraiser's comments on what the teacher does well..."></textarea>
+    </div>
+    <div class="comment-card">
+      <h4>Areas for Improvement</h4>
+      <textarea id="improvements" placeholder="Specific, measurable areas where the teacher needs to grow..."></textarea>
+    </div>
+    <div class="comment-card">
+      <h4>Agreed Goals for Next Term</h4>
+      <textarea id="goals" placeholder="SMART goals jointly agreed between appraiser and teacher..."></textarea>
+    </div>
+    <div class="comment-card">
+      <h4>Teacher's Response / Remarks</h4>
+      <textarea id="teacherResponse" placeholder="Teacher's acknowledgement, comments or rebuttal..."></textarea>
+    </div>
+  </div>
+
+  <!-- Signatures -->
+  <div class="signatures">
+    <div class="sig-card">
+      <div class="role">Appraisee (Teacher)</div>
+      <div class="name-line"></div>
+      <div class="date-line">Signature & Date</div>
+    </div>
+    <div class="sig-card">
+      <div class="role">Appraiser (HOD / Principal)</div>
+      <div class="name-line"></div>
+      <div class="date-line">Signature & Date</div>
+    </div>
+    <div class="sig-card">
+      <div class="role">Approved By (Proprietor / School Board)</div>
+      <div class="name-line"></div>
+      <div class="date-line">Signature & Date</div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  /* ============================================================
+     COMPUTATION LOGIC
+     Each criterion is rated 1–5.
+     Section subtotal = (sum of ratings / (rated × 5)) × 100
+     Final score = (A × WEIGHTS.A) + (B × WEIGHTS.B) + (C × WEIGHTS.C)
+     ============================================================ */
+
+  /* ---- CONFIG: tune weights, exam blend, and grade scale here ---- */
+  const WEIGHTS = { A: 0.30, B: 0.40, C: 0.30 };   // must sum to 1.0
+  const B_EXAM_BLEND = 0.40;                          // how much real exam
+                                                    // results count toward
+                                                    // Section B (0–1)
+  const GRADE_SCALE = [
+    { min: 85, letter: 'A',  label: 'Outstanding',    decision: 'Highly recommended for PROMOTION, increment & accelerated advancement.' },
+    { min: 75, letter: 'B+', label: 'Excellent',      decision: 'Recommended for PROMOTION to next grade/level.' },
+    { min: 65, letter: 'B',  label: 'Very Good',      decision: 'Eligible for PROMOTION (subject to admin endorsement).' },
+    { min: 55, letter: 'C',  label: 'Good',           decision: 'Retained; placed on 1-term Performance Improvement Plan.' },
+    { min: 45, letter: 'D',  label: 'Fair',           decision: 'Retained with mandatory improvement plan; NOT eligible for promotion.' },
+    { min: 0,  letter: 'F',  label: 'Unsatisfactory', decision: 'NOT promoted. Disciplinary review; possible non-renewal of contract.' }
+  ];
+
+  /* ---- Generic, grade-based comment suggestions (Yeshua HS values) ----
+     Auto-filled into the comment boxes ONLY when they are empty, so the
+     appraiser / teacher can overwrite them without losing their edits.   */
+  const GRADE_TEMPLATES = {
+    'A': {
+      strengths:
+        "Demonstrates exceptional commitment to Godliness, Academic Excellence and Entrepreneurship. " +
+        "Consistently exceeds expectations in lesson delivery, spiritual mentorship and student outcomes, " +
+        "and serves as a godly role model for students and colleagues alike.",
+      improvements:
+        "Sustain already-excellent practice and reach further: mentor other staff, lead whole-school " +
+        "initiatives, and share best practices in Continuous Assessment and exam preparation.",
+      goals:
+        "1. Lead at least one school-wide academic or vocational initiative next term.\n" +
+        "2. Mentor a junior colleague and model lesson planning.\n" +
+        "3. Sustain or improve current pass / distinction rates.",
+      response:
+        "Thank You for the affirmation. I am grateful to God for the progress and commit to sustaining " +
+        "this standard while supporting my colleagues."
+    },
+    'B+': {
+      strengths:
+        "Strong performance in teaching, character formation and results. Students respond well to lessons " +
+        "and show clear academic and moral growth under this teacher's care.",
+      improvements:
+        "Push a little further on distinction rates and on consistency of remediation for weak learners. " +
+        "Deepen integration of entrepreneurship across subject content.",
+      goals:
+        "1. Raise the A/B (distinction) rate by ~5% next term.\n" +
+        "2. Launch one new skills or academic club.\n" +
+        "3. Document and share one exemplar lesson plan each month.",
+      response:
+        "I appreciate the feedback and agree with the noted growth areas. I will work deliberately on the " +
+        "stated goals next term."
+    },
+    'B': {
+      strengths:
+        "Meets expectations reliably with good lesson delivery, moral example and student engagement. " +
+        "Produces solid, stable academic results.",
+      improvements:
+        "Work on raising overall pass rates and consistency of Continuous Assessment. Strengthen personal " +
+        "vocational growth and build partnerships with industry / alumni.",
+      goals:
+        "1. Improve the class pass rate by 5–10%.\n" +
+        "2. Attend one professional-development workshop.\n" +
+        "3. Introduce one practical entrepreneurship activity per term.",
+      response:
+        "Thank you. I accept the areas noted and will focus on the agreed goals with my supervisor's support."
+    },
+    'C': {
+      strengths:
+        "Shows satisfactory teaching and reasonable engagement with students, meeting the basic " +
+        "expectations of the role.",
+      improvements:
+        "Needs to improve lesson planning, consistency across the rated criteria, and student outcomes. " +
+        "More deliberate spiritual mentorship and remediation are required.",
+      goals:
+        "1. Achieve all three supervisor-set targets this term.\n" +
+        "2. Lift the pass rate above the PIP threshold.\n" +
+        "3. Attend weekly lesson-planning support.",
+      response:
+        "I acknowledge the feedback. I will engage fully with the Performance Improvement Plan and welcome " +
+        "closer supervision."
+    },
+    'D': {
+      strengths:
+        "Demonstrates willingness to remain in the role and shows some basic competence in classroom duties.",
+      improvements:
+        "Significant improvement needed in lesson delivery, student results, spiritual integration and " +
+        "vocational engagement. Requires close, regular supervision.",
+      goals:
+        "1. Meet weekly with the HOD to review lesson plans.\n" +
+        "2. Raise the pass rate to at least a satisfactory level.\n" +
+        "3. Complete all mandated improvement-programme activities.",
+      response:
+        "I understand the concerns raised and accept the improvement plan. I will make the required changes " +
+        "with the school's support."
+    },
+    'F': {
+      strengths:
+        "Continues to report for duty and shows potential to improve with structured support and guidance.",
+      improvements:
+        "Performance is currently below the required standard across teaching, results and core values. " +
+        "Urgent, sustained improvement is required.",
+      goals:
+        "1. Follow all formal probation requirements.\n" +
+        "2. Accept weekly monitored lesson delivery.\n" +
+        "3. Demonstrate measurable gains in student outcomes within the review period.",
+      response:
+        "I note the decision and the areas of concern. I will cooperate fully with the disciplinary review " +
+        "and improvement process."
+    }
+  };
+
+  // Fill the comment boxes with grade-based suggestions, but only if empty.
+  function suggestComments(grade) {
+    const tpl = GRADE_TEMPLATES[grade];
+    if (!tpl) return;
+    const map = {
+      'strengths':      tpl.strengths,
+      'improvements':    tpl.improvements,
+      'goals':           tpl.goals,
+      'teacherResponse': tpl.response
+    };
+    for (const id in map) {
+      const el = document.getElementById(id);
+      if (el && el.value.trim() === '') el.value = map[id];
+    }
+  }
+
+  function sectionAvg(prefix, count) {
+    let sum = 0, rated = 0;
+    for (let i = 1; i <= count; i++) {
+      const radios = document.getElementsByName(prefix + i);
+      for (const r of radios) {
+        if (r.checked) { sum += parseInt(r.value); rated++; break; }
+      }
+    }
+    if (rated === 0) return null;
+    return ((sum / (rated * 5)) * 100);
+  }
+
+  function fmt(n) {
+    return (n === null) ? '—' : n.toFixed(1);
+  }
+
+  function getGrade(score) {
+    for (const g of GRADE_SCALE) {
+      if (score >= g.min) return g;
+    }
+    return GRADE_SCALE[GRADE_SCALE.length - 1];
+  }
+
+  function computeResults() {
+    const total = parseInt(document.getElementById('candTotal').value) || 0;
+    const pass  = parseInt(document.getElementById('candPass').value)  || 0;
+    const a     = parseInt(document.getElementById('candA').value)     || 0;
+    const b     = parseInt(document.getElementById('candB').value)     || 0;
+    if (total > 0) {
+      const pPct = ((pass / total) * 100);
+      const tPct = (((a + b) / total) * 100);
+      document.getElementById('computedPass').textContent = pPct.toFixed(1) + '%';
+      document.getElementById('computedTop').textContent  = tPct.toFixed(1) + '%';
+    } else {
+      document.getElementById('computedPass').textContent = '— %';
+      document.getElementById('computedTop').textContent  = '— %';
+    }
+  }
+
+  // Real exam results (from the figures typed in Section B) as a 0–100 score.
+  function examOutcomeScore() {
+    const pass = parseFloat(document.getElementById('computedPass').textContent) || 0;
+    const top  = parseFloat(document.getElementById('computedTop').textContent)  || 0;
+    const prev = parseFloat(document.getElementById('prevYear').value)           || 0;
+    // Year-on-year improvement: 50 = flat, +2 per point gained, clamped 0–100
+    const yoy  = Math.max(0, Math.min(100, 50 + (pass - prev) * 2));
+    return (pass * 0.4) + (top * 0.3) + (yoy * 0.3);
+  }
+
+  function calculateAll() {
+    // Refresh exam-derived percentages FIRST so the Section B blend
+    // uses current figures (examOutcomeScore reads them).
+    computeResults();
+
+    const aRaw = sectionAvg('a', 7);
+    const bRaw = sectionAvg('b', 8);
+    const cRaw = sectionAvg('c', 8);
+
+    // Blend Section B's manual ratings with the real exam outcome
+    let b = bRaw;
+    if (bRaw !== null) {
+      b = (bRaw * (1 - B_EXAM_BLEND)) + (examOutcomeScore() * B_EXAM_BLEND);
+    }
+
+    const a = aRaw, c = cRaw;
+
+    document.getElementById('scoreA').textContent = fmt(a) + ' /100';
+    document.getElementById('scoreB').textContent = fmt(b) + ' /100';
+    document.getElementById('scoreC').textContent = fmt(c) + ' /100';
+
+    document.getElementById('rawA').textContent  = fmt(a);
+    document.getElementById('rawB').textContent  = fmt(b);
+    document.getElementById('rawC').textContent  = fmt(c);
+
+    document.getElementById('weightA').textContent = (a === null) ? '—' : (a * WEIGHTS.A).toFixed(1);
+    document.getElementById('weightB').textContent = (b === null) ? '—' : (b * WEIGHTS.B).toFixed(1);
+    document.getElementById('weightC').textContent = (c === null) ? '—' : (c * WEIGHTS.C).toFixed(1);
+
+    if (a !== null && b !== null && c !== null) {
+      const total = (a * WEIGHTS.A) + (b * WEIGHTS.B) + (c * WEIGHTS.C);
+      document.getElementById('totalScore').textContent = total.toFixed(1) + ' /100';
+      document.getElementById('finalScoreDisplay').textContent = total.toFixed(1) + '%';
+
+      const g = getGrade(total);
+      const banner = document.getElementById('decisionBanner');
+      document.getElementById('finalDecision').innerHTML =
+        `Grade <b>${g.letter}</b> — <i>${g.label}</i>. &nbsp; ${g.decision}`;
+
+      suggestComments(g.letter);
+
+      // Color-code banner (Yeshua HS theme: wine / white / ash)
+      const colors = {
+        'A':  { bg: '#FAF0F1', border: '#722F37' },   // wine tint / wine
+        'B+': { bg: '#f5f0ed', border: '#8E3D48' },   // soft wine / light wine
+        'B':  { bg: '#ffffff', border: '#4A1F26' },   // white / wine-dark
+        'C':  { bg: '#EDEDED', border: '#6B6B6B' },   // ash light / ash
+        'D':  { bg: '#c9b5b8', border: '#4A1F26' },   // wine mid / wine-dark
+        'F':  { bg: '#4A1F26', border: '#722F37', text: '#ffffff' }  // wine-dark
+      };
+      const col = colors[g.letter];
+      banner.style.background = col.bg;
+      banner.style.borderLeftColor = col.border;
+      if (col.text) banner.style.color = col.text; else banner.style.color = '';
+    } else {
+      document.getElementById('totalScore').textContent = '— /100';
+      document.getElementById('finalScoreDisplay').textContent = '— %';
+      document.getElementById('finalDecision').textContent = 'Complete all ratings to view decision…';
+      document.getElementById('decisionBanner').style.background = '#f1f5f9';
+      document.getElementById('decisionBanner').style.borderLeftColor = '#94a3b8';
+    }
+
+  }
+
+  // Recalculate whenever any input changes
+  document.addEventListener('change', calculateAll);
+  document.addEventListener('input',  calculateAll);
+  window.addEventListener('load', function () {
+    document.getElementById('weightLabelA').textContent = 'Weight: ' + Math.round(WEIGHTS.A * 100) + '%';
+    document.getElementById('weightLabelB').textContent = 'Weight: ' + Math.round(WEIGHTS.B * 100) + '%';
+    document.getElementById('weightLabelC').textContent = 'Weight: ' + Math.round(WEIGHTS.C * 100) + '%';
+    calculateAll();
+  });
+
+  /* ============================================================
+     SUBMIT TO GOOGLE SHEET (via Google Apps Script Web App)
+     ============================================================ */
+
+  function gatherFormData() {
+    const data = {
+      timestamp: new Date().toISOString(),
+      teacherName: document.getElementById('teacherName').value,
+      staffId:     document.getElementById('staffId').value,
+      subject:     document.getElementById('subject').value,
+      classes:     document.getElementById('classes').value,
+      department:  document.getElementById('dept').value,
+      session:     document.getElementById('session').value,
+      term:        document.getElementById('term').value,
+      appraisalDate: document.getElementById('appraisalDate').value,
+    };
+
+    // Gather all rating values
+    function getRadioValue(name) {
+      const radios = document.getElementsByName(name);
+      for (const r of radios) { if (r.checked) return parseInt(r.value); }
+      return '';
+    }
+    ['a1','a2','a3','a4','a5','a6','a7'].forEach(n => data[n] = getRadioValue(n));
+    ['b1','b2','b3','b4','b5','b6','b7','b8'].forEach(n => data[n] = getRadioValue(n));
+    ['c1','c2','c3','c4','c5','c6','c7','c8'].forEach(n => data[n] = getRadioValue(n));
+
+    // Exam data
+    data.candTotal = document.getElementById('candTotal').value;
+    data.candA     = document.getElementById('candA').value;
+    data.candB     = document.getElementById('candB').value;
+    data.candC     = document.getElementById('candC').value;
+    data.candPass  = document.getElementById('candPass').value;
+    data.candFail  = document.getElementById('candFail').value;
+    data.natAvg    = document.getElementById('natAvg').value;
+    data.prevYear  = document.getElementById('prevYear').value;
+    data.computedPass = document.getElementById('computedPass').textContent;
+    data.computedTop  = document.getElementById('computedTop').textContent;
+
+    // Section scores & final
+    data.scoreA = document.getElementById('scoreA').textContent.replace(' /100','').trim();
+    data.scoreB = document.getElementById('scoreB').textContent.replace(' /100','').trim();
+    data.scoreC = document.getElementById('scoreC').textContent.replace(' /100','').trim();
+    data.totalScore      = document.getElementById('totalScore').textContent.replace(' /100','').trim();
+    data.finalScorePct   = document.getElementById('finalScoreDisplay').textContent;
+
+    // Grade & decision (parse from banner)
+    const decisionHTML = document.getElementById('finalDecision').innerHTML;
+    const gradeMatch   = decisionHTML.match(/Grade\s+<b>([^<]+)<\/b>/);
+    const levelMatch   = decisionHTML.match(/<i>([^<]+)<\/i>/);
+    data.grade            = gradeMatch ? gradeMatch[1] : '';
+    data.performanceLevel = levelMatch ? levelMatch[1] : '';
+    data.decision         = decisionHTML.replace(/<[^>]+>/g, '').trim();
+
+    // Comments
+    const textareas = document.querySelectorAll('.comment-card textarea');
+    data.strengths       = textareas[0] ? textareas[0].value : '';
+    data.improvements    = textareas[1] ? textareas[1].value : '';
+    data.goals           = textareas[2] ? textareas[2].value : '';
+    data.teacherResponse = textareas[3] ? textareas[3].value : '';
+
+    return data;
+  }
+
+  function showStatus(msg, type) {
+    const el = document.getElementById('submitStatus');
+    el.textContent = msg;
+    el.style.color = type === 'success' ? '#059669'
+                   : type === 'error'   ? '#dc2626'
+                   : '#0d3b66';
+  }
+
+  async function submitToBackend() {
+    const url = '/api/submit';   // same-origin Bun server -> Supabase
+
+    // Validate required fields
+    const teacherName = document.getElementById('teacherName').value.trim();
+    if (!teacherName) {
+      showStatus('⚠ Please enter the teacher\'s name before submitting.', 'error');
+      document.getElementById('teacherName').focus();
+      return;
+    }
+
+    // Check all ratings are filled
+    const allRatings = ['a1','a2','a3','a4','a5','a6','a7',
+                        'b1','b2','b3','b4','b5','b6','b7','b8',
+                        'c1','c2','c3','c4','c5','c6','c7','c8'];
+    const missing = allRatings.filter(n => {
+      const radios = document.getElementsByName(n);
+      for (const r of radios) { if (r.checked) return false; }
+      return true;
+    });
+    if (missing.length > 0) {
+      if (!confirm(`⚠ ${missing.length} criteria are not yet rated (${missing.join(', ')}). Submit anyway?`)) return;
+    }
+
+    const data = gatherFormData();
+    const btn  = document.getElementById('submitBtn');
+    btn.disabled = true;
+    btn.textContent = '⏳ Submitting...';
+    showStatus('⏳ Saving to Supabase…', 'pending');
+
+    try {
+      const response = await fetch(url, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+      const result = await response.json();
+      if (result.status === 'ok') {
+        showStatus('✅ ' + result.message, 'success');
+      } else {
+        throw new Error(result.message || 'Server returned an error');
+      }
+    } catch (err) {
+      showStatus('❌ Submission failed: ' + err.message + '. Is the Bun server running (bun run dev)?', 'error');
+    } finally {
+      btn.disabled = false;
+      btn.textContent = '📤 Submit to Supabase';
+    }
+  }
+</script>
+</body>
+</html>

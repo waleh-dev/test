@@ -1,0 +1,3 @@
+$ bun run server.ts
+⚠ Could not reach Supabase / create table on boot: DNSException: getaddrinfo ENOTFOUND
+   The form will still be served, but submissions will fail until the DB is reachable.
