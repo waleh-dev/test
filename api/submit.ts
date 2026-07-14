@@ -7,6 +7,10 @@ import { handleSubmit } from '../server';
 // (not the Edge runtime).
 export const config = { runtime: 'nodejs' };
 
+// Give the DB time to wake up (Render free tier spins down when idle, so the
+// first connection can take ~20–30s). Hobby allows up to 60s for Node fns.
+export const maxDuration = 60;
+
 export default function (req: Request): Promise<Response> {
   return handleSubmit(req);
 }
