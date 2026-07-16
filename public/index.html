@@ -47,7 +47,7 @@
     margin-bottom: 24px;
   }
   .header .crest {
-    width: 120px; height: auto;
+    width: 110px; height: 110px;
     margin: 0 auto 10px;
     display: block;
   }
@@ -456,7 +456,21 @@
 
   <!-- ===================== HEADER ===================== -->
   <div class="header">
-    <img class="crest" src="logo.jpg" alt="Yeshua High School Crest">
+    <svg class="crest" viewBox="0 0 120 120" role="img" aria-label="Yeshua High School Crest">
+      <!-- outer ring -->
+      <circle cx="60" cy="60" r="56" fill="#ffffff" stroke="#722F37" stroke-width="3"/>
+      <circle cx="60" cy="60" r="50" fill="none" stroke="#722F37" stroke-width="1"/>
+      <!-- open book (knowledge) -->
+      <path d="M60 50 C52 43 40 43 32 47 L32 78 C40 74 52 74 60 81 Z" fill="#722F37"/>
+      <path d="M60 50 C68 43 80 43 88 47 L88 78 C80 74 68 74 60 81 Z" fill="#B00020"/>
+      <line x1="60" y1="50" x2="60" y2="81" stroke="#ffffff" stroke-width="1.5"/>
+      <!-- cross (Jesus — our perfect example) -->
+      <rect x="57" y="20" width="6" height="22" rx="2" fill="#D4AF37"/>
+      <rect x="50" y="28" width="20" height="6" rx="2" fill="#D4AF37"/>
+      <!-- banner -->
+      <path d="M22 92 Q60 104 98 92 L98 100 Q60 110 22 100 Z" fill="#722F37"/>
+      <text x="60" y="100" text-anchor="middle" font-family="Georgia, serif" font-size="9" fill="#ffffff" letter-spacing="1">YHS</text>
+    </svg>
     <h1>YESHUA HIGH SCHOOL</h1>
     <h2>Teacher Performance Appraisal Form</h2>
     <div class="tagline">"JESUS — OUR PERFECT EXAMPLE"</div>
